@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Precious 💜 | AndReece</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Great+Vibes&display=swap');
+
+:root {
+  --pink: #ff8ed4;
+  --purple: #bd9aff;
+  --dark: #160d29;
+  --light: #fff2fc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--light);
+  background:
+    radial-gradient(ellipse at top, #59306f 0%, transparent 55%),
+    linear-gradient(160deg, #160d29, #301343 55%, #170c2b);
+}
+
+button { font: inherit; cursor: pointer; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 18px;
+}
+
+.logo { color: var(--pink); font-size: 1.15rem; }
+
+nav button {
+  border: 0;
+  background: transparent;
+  color: white;
+  padding: 7px;
+}
+
+main {
+  max-width: 760px;
+  margin: auto;
+  padding: 35px 22px 70px;
+  text-align: center;
+}
+
+section { display: none; animation: appear .65s ease; }
+section.active { display: block; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+  font-size: 4rem;
+  display: inline-block;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.15); }
+}
+
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  color: var(--pink);
+}
+
+h1 { font-size: clamp(3.1rem, 11vw, 5.5rem); margin: 18px 0; }
+h2 { font-size: clamp(2.5rem, 9vw, 4rem); }
+
+p { line-height: 1.9; color: #f4dff5; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: .75rem;
+  color: var(--purple);
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--pink);
+  background: linear-gradient(135deg, #ff8ed4, #c49aff);
+  color: #291035;
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  margin: 9px 5px;
+  box-shadow: 0 0 25px #e879d333;
+  transition: transform .2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn.secondary {
+  background: transparent;
+  color: white;
+  border-color: #e9c9f2;
+  box-shadow: none;
+}
+
+.card {
+  margin: 22px auto;
+  padding: 24px;
+  max-width: 530px;
+  border: 1px solid #ffffff25;
+  border-radius: 24px;
+  background: #ffffff0b;
+  backdrop-filter: blur(10px);
+}
+
+.memory {
+  width: 100%;
+  display: block;
+  text-align: left;
+  border-radius: 16px;
+  margin: 12px 0;
+  padding: 18px;
+  background: #ffffff0c;
+  color: white;
+  border: 1px solid #ffffff20;
+}
+
+.memory span {
+  display: block;
+  color: var(--pink);
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.note {
+  background: #fff0fa;
+  color: #49254e;
+  border-radius: 12px;
+  padding: 25px;
+  transform: rotate(-1deg);
+  margin: 25px auto;
+  max-width: 480px;
+}
+
+.note p { color: #49254e; }
+
+footer {
+  padding: 20px;
+  color: #d7b4e5;
+  font-size: .85rem;
+  text-align: center;
+}
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.float-heart {
+  position: absolute;
+  bottom: -40px;
+  animation: floatUp linear forwards;
+  opacity: .65;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+#noBtn { z-index: 5; }
+
+#noMessage {
+  min-height: 35px;
+  font-weight: 600;
+  color: var(--pink);
+}
+
+.whatsapp-note {
+  font-size: .85rem;
+  opacity: .8;
+  margin-top: 15px;
+}
+
+@media(max-width: 500px) {
+  nav { justify-content: center; }
+  nav button { font-size: .78rem; }
+  main { padding-top: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<nav>
+  <div class="logo">♡ For you, Precious</div>
+  <div>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('why')">Why you?</button>
+    <button onclick="showPage('future')">Our future</button>
+    <button onclick="showPage('letter')">My letter</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- WELCOME PAGE -->
+<section id="home" class="active">
+  <div class="heart">♡</div>
+  <p class="eyebrow">A little something from AndReece</p>
+  <h1>Hey, Pretty Baby 💗</h1>
+  <p>
+    I made this little corner of the internet just for you.<br>
+    Every little detail comes with a piece of my heart.
+  </p>
+  <button class="btn" onclick="showPage('why')">
+    Open your surprise ✨
+  </button>
+</section>
+
+<!-- REASONS PAGE -->
+<section id="why">
+  <p class="eyebrow">A few things I want you to know</p>
+  <h2>Why you, Pretty Baby?</h2>
+  <p>There are so many little things about you that make you special to me.</p>
+
+  <button class="memory" onclick="reveal('m1')">
+    <span>♡ Reason one</span>
+    Tap to discover
+    <p id="m1" hidden>
+      Your presence makes ordinary moments feel special. 💗
+    </p>
+  </button>
+
+  <button class="memory" onclick="reveal('m2')">
+    <span>♡ Reason two</span>
+    Tap to discover
+    <p id="m2" hidden>
+      I appreciate the person you are and the happiness you bring into my life. 🌷
+    </p>
+  </button>
+
+  <button class="memory" onclick="reveal('m3')">
+    <span>♡ Reason three</span>
+    Tap to discover
+    <p id="m3" hidden>
+      I want to keep learning about you, supporting you and making beautiful memories together. ✨
+    </p>
+  </button>
+
+  <button class="btn" onclick="showPage('future')">
+    There's more... →
+  </button>
+</section>
+
+<!-- FUTURE PAGE -->
+<section id="future">
+  <p class="eyebrow">Something I look forward to</p>
+  <h2>Maybe it's the beginning of us 💜</h2>
+
+  <div class="card">
+    <div class="heart">🌷</div>
+    <p>More conversations that make us lose track of time.</p>
+    <p>More laughter, little surprises and memories worth keeping.</p>
+    <p>Being there for each other through easy days and difficult ones.</p>
+    <p>
+      A chance to build something real, at a pace that feels right for both of us.
+    </p>
+  </div>
+
+  <button class="btn" onclick="showPage('letter')">
+    One little letter 💌
+  </button>
+</section>
+
+<!-- LETTER PAGE -->
+<section id="letter">
+  <p class="eyebrow">From my heart to yours</p>
+  <h2>A little note for you</h2>
+
+  <div class="note">
+    <p>Dear Precious,</p>
+    <p>
+      I've been wanting to ask you something special, and I wanted
+      to do it in a way you could keep and remember.
+    </p>
+    <p>
+      You mean a lot to me. I appreciate the moments we share,
+      and I would love the opportunity to make even more of them with you.
+    </p>
+    <p>So, here goes... 💗</p>
+    <p>With love,<br><strong>AndReece ♡</strong></p>
+  </div>
+
+  <button class="btn" onclick="showPage('question')">
+    The big question 💍
+  </button>
+</section>
+
+<!-- QUESTION PAGE -->
+<section id="question">
+  <div class="heart">💗</div>
+  <p class="eyebrow">I've been wanting to ask you...</p>
+  <h1>Will you be my girlfriend, Precious?</h1>
+  <p>
+    I'd love to make more memories with you.<br>
+    No pressure — I want your honest answer. ♡
+  </p>
+
+  <div style="margin:35px 0; min-height:70px;">
+    <button class="btn" onclick="showPage('yes')">
+      YES! 💖
+    </button>
+
+    <button class="btn secondary" id="noBtn" onclick="sayNo()">
+      No 💜
+    </button>
+  </div>
+
+  <p id="noMessage" aria-live="polite"></p>
+</section>
+
+<!-- YES PAGE -->
+<section id="yes">
+  <div class="heart">💞</div>
+  <p class="eyebrow">A moment worth celebrating</p>
+  <h1>You said yes!</h1>
+  <h2>Precious & AndReece 💗</h2>
+
+  <div class="card">
+    <p>
+      Here's to new memories, honest conversations, laughter,
+      and taking this journey one day at a time.
+    </p>
+    <p>I'm so happy you chose to give us a chance. ♡</p>
+    <p>✨ 💜 🌷 💗 ✨</p>
+  </div>
+
+  <p>Our story is just beginning...</p>
+
+  <button class="btn" onclick="sendWhatsApp('yes')">
+    Tell AndReece on WhatsApp 💌
+  </button>
+
+  <p class="whatsapp-note">
+    Tap the button, then press Send in WhatsApp.
+  </p>
+
+  <button class="btn secondary" onclick="showPage('home')">
+    Relive the surprise ↺
+  </button>
+</section>
+
+<!-- NO PAGE -->
+<section id="no">
+  <div class="heart">💜</div>
+  <p class="eyebrow">Thank you for being honest</p>
+  <h1>It's okay, Precious.</h1>
+
+  <div class="card">
+    <p>
+      Thank you for taking the time to go through my little surprise.
+    </p>
+    <p>
+      Your feelings matter to me, and I respect your answer.
+      I hope this little website still made you smile. 💜
+    </p>
+    <p>With care,<br><strong>AndReece ♡</strong></p>
+  </div>
+
+  <button class="btn" onclick="sendWhatsApp('no')">
+    Send AndReece a message 💌
+  </button>
+
+  <p class="whatsapp-note">
+    This opens WhatsApp with a message you can review before sending.
+  </p>
+
+  <button class="btn secondary" onclick="showPage('home')">
+    Back to the beginning
+  </button>
+</section>
+
+</main>
+
+<footer>
+  Made with love by AndReece ♡
+</footer>
+
+<script>
+// Change this if your WhatsApp number changes.
+// Use country code 27 without the + sign.
+const WHATSAPP_NUMBER = "27665557317";
+
+// Navigate between pages.
+function showPage(id) {
+  document.querySelectorAll("main section").forEach(section => {
+    section.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (id === "yes") celebrate();
+
+  // Reset the No button whenever the question is revisited.
+  if (id === "question") resetNoButton();
+}
+
+// Reveal the reasons.
+function reveal(id) {
+  const item = document.getElementById(id);
+  item.hidden = !item.hidden;
+}
+
+// NO button: run away twice, then work on the third click.
+let noClicks = 0;
+
+function sayNo() {
+  noClicks++;
+
+  const btn = document.getElementById("noBtn");
+  const message = document.getElementById("noMessage");
+
+  if (noClicks <= 2) {
+    message.textContent = noClicks === 1
+      ? "Hehe, not so fast, Precious! 🙈💗"
+      : "You almost caught me! 😂💕";
+
+    // Position relative to the browser window.
+    btn.style.position = "fixed";
+
+    const maxX = Math.max(10, window.innerWidth - btn.offsetWidth - 20);
+    const maxY = Math.max(10, window.innerHeight - btn.offsetHeight - 20);
+
+    btn.style.left = Math.max(10, Math.random() * maxX) + "px";
+    btn.style.top = Math.max(10, Math.random() * maxY) + "px";
+
+  } else {
+    // Third click: allow the No answer.
+    btn.style.position = "static";
+    btn.style.left = "";
+    btn.style.top = "";
+    btn.textContent = "No, thank you 💜";
+
+    // Show the separate No response page.
+    showPage("no");
+  }
+}
+
+function resetNoButton() {
+  noClicks = 0;
+
+  const btn = document.getElementById("noBtn");
+  const message = document.getElementById("noMessage");
+
+  btn.style.position = "";
+  btn.style.left = "";
+  btn.style.top = "";
+  btn.textContent = "No 💜";
+
+  message.textContent = "";
+}
+
+// Open WhatsApp with the appropriate message.
+// The visitor must press Send in WhatsApp.
+function sendWhatsApp(answer) {
+  let message;
+
+  if (answer === "yes") {
+    message =
+      "AndReece! 💗 I went through your special website, " +
+      "and my answer is YES! 💍💕 It's a yes from Precious!";
+  } else {
+    message =
+      "Hey AndReece 💜 I saw your special website. " +
+      "Thank you for making it for me. My answer is no, " +
+      "and I hope you understand. - Precious";
+  }
+
+  const url =
+    "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+// Floating hearts.
+function floatHeart() {
+  const container = document.getElementById("hearts");
+  const heart = document.createElement("span");
+
+  heart.className = "float-heart";
+  heart.textContent = ["♡", "💗", "✧", "♥"][
+    Math.floor(Math.random() * 4)
+  ];
+
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.fontSize = (14 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (6 + Math.random() * 7) + "s";
+
+  container.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 13000);
+}
+
+setInterval(floatHeart, 800);
+
+// Celebration when YES is selected.
+function celebrate() {
+  for (let i = 0; i < 35; i++) {
+    setTimeout(floatHeart, i * 100);
+  }
+}
+</script>
+
+</body>
+</html>
